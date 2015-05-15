@@ -13,6 +13,19 @@ public class Game {
       System.out.println("What grade level are you?");
       int theChosenOnesGrade = console.nextInt();
       Player theChosenOne = new Player(theChosenOnesName, theChosenOnesAge, theChosenOnesGrade);
+     
+     
+     
+      Attack useCode = new Attack("useCode",10);
+      
+      theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
+      System.out.println(theChosenOne.getHp());
+      theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
+      System.out.println(theChosenOne.getHp());
+      theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
+      System.out.println(theChosenOne.getHp());
+      theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
+      System.out.println(theChosenOne.getHp());
       /*
       System.out.println(theChosenOne.getName());
       System.out.println(theChosenOne.getAge());
