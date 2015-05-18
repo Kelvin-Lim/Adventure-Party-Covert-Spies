@@ -26,6 +26,19 @@ public class Game {
       System.out.println(theChosenOne.getHp());
       theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
       System.out.println(theChosenOne.getHp());
+      
+      Decision subDay = new Decision("You have a sub in class!" , 2);
+      subDay.setDecisions("Study.");
+      subDay.setDecisions("Play Halo.");
+      System.out.println(subDay.displayEvent());
+      subDay.displayChoices();
+      String theChosenOnesChoice = console.next();
+      for(int i = 0; i < subDay.decisions().length; i++) {
+         if (theChosenOnesChoice.substring(0 , 1).equalsIgnoreCase(subDay.decisions()[i].substring(0 , 1))) {
+            System.out.println("Hi");
+         }
+      }
+      
       /*
       System.out.println(theChosenOne.getName());
       System.out.println(theChosenOne.getAge());
