@@ -25,7 +25,7 @@ public class Decision {
    
    public void displayChoices() {
       for(int i = 0; i < numOfDec; i++) {
-         System.out.println(decisions[i]);
+         System.out.println("Option " + (i + 1) + "): " + decisions[i]);
       }
    }
 }

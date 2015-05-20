@@ -15,7 +15,7 @@ public class Attack {
       double critNumber = (Math.random() * 100);
       System.out.print(attackerName + " used " + nameAtt);
       if(chanceToCrit >= critNumber) {
-         System.out.println(" for " + (damageOf * 2) + " damage!");
+         System.out.println(" for " + (damageOf * 2) + " damage! Critical hit!");
          Hp-= (damageOf * 2);
       } else {
          System.out.println(" for " + damageOf + " damage!");
