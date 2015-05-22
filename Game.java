@@ -38,7 +38,7 @@ public class Game {
       String theChosenOnesChoice = console.next();
       for(int i = 0; i < subDay.decisions().length; i++) {
          if (theChosenOnesChoice.substring(0 , 1).equalsIgnoreCase(subDay.decisions()[i].substring(0 , 1))) {
-            System.out.println("Hi");
+            //System.out.println("Hi");
             checker = i;
          }
       }
@@ -50,6 +50,17 @@ public class Game {
          //stat increase/decrease
          theChosenOne.updateFocus(-1);
       }
+      
+      // Battle test
+      AttackOptions firstFight = new AttackOptions();
+      Attack normalAttack = new Attack("Study", theChosenOne.getIntel());
+      Attack specialAttack = new Attack("Summon Kelvin!", theChosenOne.getCharis());
+      firstFight.addAttack(normalAttack);
+      firstFight.addAttack(specialAttack);
+      Boss rapBoss = new Boss(10, "The Rap God", 2);
+      System.out.println(rapBoss.getName() + " has appeared! What do you do?");
+      firstFight.displayAttackOptions();
+      
       /*
       System.out.println(theChosenOne.getName());
       System.out.println(theChosenOne.getAge());

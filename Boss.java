@@ -6,7 +6,7 @@ public class Boss {
    
    public Boss(int bossHp, String Name, int bossLuck) {
       this.bossHp = bossHp;
-      this.bossName = bossName;
+      this.bossName = Name;
       this.bossLuck = bossLuck;
       bossStats = new int[]{ bossHp, 0};
       

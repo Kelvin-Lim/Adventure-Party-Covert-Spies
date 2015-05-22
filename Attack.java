@@ -24,4 +24,9 @@ public class Attack {
       return Hp;  
    }
    
+   public String getAttackName() {
+      return nameAtt;
+   }
+   
+   
 }
