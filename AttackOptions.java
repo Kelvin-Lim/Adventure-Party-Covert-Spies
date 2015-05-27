@@ -14,4 +14,8 @@ public class AttackOptions {
          System.out.println("Option " + (attackNum + 1) + "): " + attackOptions.get(attackNum).getAttackName());
       } 
    }
+   
+   public ArrayList<Attack> attacks() {
+      return attackOptions;
+   }
 }

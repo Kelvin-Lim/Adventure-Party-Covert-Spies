@@ -36,8 +36,8 @@ public class Player {
       return playerStats[0];
    }
    
-   public void setHp(int Hp) {
-      playerStats[0] = Hp;
+   public void updateHp(int update) {
+      playerStats[0] -= update;
    }
    
    public int getIntel() {

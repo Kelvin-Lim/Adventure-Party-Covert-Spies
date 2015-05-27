@@ -16,6 +16,7 @@ public class Game {
      
      
      
+      /*
       Attack useCode = new Attack("useCode",10);
       
       theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
@@ -26,7 +27,7 @@ public class Game {
       System.out.println(theChosenOne.getHp());
       theChosenOne.setHp(useCode.useAttack(theChosenOne.getHp(),4,"RapBoss"));
       System.out.println(theChosenOne.getHp());
-      
+      */
       //System.out.println("Focus: "+theChosenOne.getFocus());
       
       Decision subDay = new Decision("You have a sub in class!" , 2);
@@ -57,9 +58,12 @@ public class Game {
       Attack specialAttack = new Attack("Summon Kelvin!", theChosenOne.getCharis());
       firstFight.addAttack(normalAttack);
       firstFight.addAttack(specialAttack);
-      Boss rapBoss = new Boss(10, "The Rap God", 2);
+      Boss rapBoss = new Boss(10, "The Rap God", 2,5);
       System.out.println(rapBoss.getName() + " has appeared! What do you do?");
       firstFight.displayAttackOptions();
+      int theChosenAttack = console.nextInt();
+      
+      firstFight.attacks().get(theChosenAttack - 1).useAttackPlayer(theChosenOne,rapBoss);
       
       /*
       System.out.println(theChosenOne.getName());
