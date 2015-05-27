@@ -54,10 +54,20 @@ public class Game {
       
       // Battle test
       AttackOptions firstFight = new AttackOptions();
+      AttackOptions bossFight = new AttackOptions();  
       Attack normalAttack = new Attack("Study", theChosenOne.getIntel());
       Attack specialAttack = new Attack("Summon Kelvin!", theChosenOne.getCharis());
+      Attack bossAttack1 = new Attack("Kanye West Ego", 5);
+      Attack bossAttack2 = new Attack("Lil B's Curse", 8);
+      Attack bossAttack3 = new Attack("Spit Fire", 10);
+      Attack bossAttack4 = new Attack("Mom's Spaghetti", 15);
+      Attack bossAttack5 = new Attack("Deadline", 99999);
       firstFight.addAttack(normalAttack);
       firstFight.addAttack(specialAttack);
+      bossFight.addAttack(bossAttack1);
+      bossFight.addAttack(bossAttack2);
+      bossFight.addAttack(bossAttack3);
+      bossFight.addAttack(bossAttack4);
       Boss rapBoss = new Boss(10, "The Rap God", 2,5);
       System.out.println(rapBoss.getName() + " has appeared! What do you do?");
       firstFight.displayAttackOptions();
