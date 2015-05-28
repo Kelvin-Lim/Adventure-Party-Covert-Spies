@@ -9,14 +9,14 @@ public class Player {
       playerAge = age;
       playerGrade = grade;
       if(grade == 12){ 
-         playerStats = new int[]{playerGrade * 10,10,3,8,4};
+         playerStats = new int[]{playerGrade * 10,7,3,6,4};
          //spot 0 = HP, spot 1 = intel, spot 2 = focus, spot 3 = charis, spot 4 = luck
       } else if(grade == 11) {
-         playerStats = new int[]{playerGrade * 10,8,8,4,2};
+         playerStats = new int[]{playerGrade * 10,6,8,4,2};
       } else if(grade == 10) {
-         playerStats = new int[]{playerGrade * 10,6,7,3,5};
+         playerStats = new int[]{playerGrade * 10,5,7,3,5};
       } else {
-         playerStats = new int[]{playerGrade * 10,4,4,1,9};
+         playerStats = new int[]{playerGrade * 10,2,5,1,9};
       }
    }
    

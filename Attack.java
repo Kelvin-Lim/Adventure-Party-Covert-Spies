@@ -36,7 +36,7 @@ public class Attack {
    public void useAttackBoss(Player player, Boss boss) {
       int strength = damageOf;
       int chanceToCrit = boss.getLuck() * 5;
-      int accuracy = player.getFocus() * 10;
+      int accuracy = boss.getFocus() * 10;
       double accurNumber = (Math.random() * 100);
       double critNumber = (Math.random() * 100);
       System.out.print(boss.getName() + " used " + nameAtt);
@@ -51,7 +51,7 @@ public class Attack {
             System.out.println(player.getName() + " has " + player.getHp() + "HP remaining!");
          } 
       } else {
-         System.out.println("You got lucky! Bosses attack missed.");
+         System.out.println(" You got lucky! Bosses attack missed.");
          System.out.println(player.getName() + " has " + player.getHp() + "HP remaining!");
       }
    }

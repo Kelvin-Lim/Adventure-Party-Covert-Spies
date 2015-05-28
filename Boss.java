@@ -31,4 +31,8 @@ public class Boss {
    public int getFocus() {
       return bossStats[2];
    }
+   
+   public void updateFocus(int update) {
+      bossStats[2]+= update;
+   }
 }
