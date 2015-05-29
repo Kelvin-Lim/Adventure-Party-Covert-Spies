@@ -3,6 +3,7 @@ public class Player {
    private int playerAge;
    private int playerGrade;
    private int[] playerStats;
+   int maxHp;
    
    public Player (String name, int age, int grade) {
       playerName = name;
@@ -18,6 +19,7 @@ public class Player {
       } else {
          playerStats = new int[]{playerGrade * 10,2,5,1,9};
       }
+      maxHp = playerGrade*10;
    }
    
    public String getName() {
@@ -70,5 +72,14 @@ public class Player {
    
    public void updateLuck(int update) {
       playerStats[4] += update;
+   }
+   
+   public void setHp(int update) {
+      playerStats[0] += update;
+      maxHp += update;
+   }
+   
+   public void healHp(int update) {
+      playerStats[0] = maxHp;
    }
 }
