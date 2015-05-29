@@ -59,11 +59,11 @@ public class Game {
       AttackOptions firstFight = new AttackOptions();
       AttackOptions bossFight = new AttackOptions();  
       Attack normalAttack = new Attack("Study", 5);
-      Attack specialAttack = new Attack("Summon Kelvin!", theChosenOne.getCharis());
-      Attack bossAttack1 = new Attack("Kanye West Ego.", 5);
-      Attack bossAttack2 = new Attack("Lil B's Curse.", 8);
-      Attack bossAttack3 = new Attack("Spit Fire.", 10);
-      Attack bossAttack4 = new Attack("Mom's Spaghetti.", 15);
+      Attack specialAttack = new Attack("Summon Kelvin", theChosenOne.getCharis());
+      Attack bossAttack1 = new Attack("Kanye West Ego", 5);
+      Attack bossAttack2 = new Attack("Lil B's Curse", 8);
+      Attack bossAttack3 = new Attack("Spit Fire", 10);
+      Attack bossAttack4 = new Attack("Mom's Spaghetti", 15);
       Attack bossAttack5 = new Attack("Deadline!!!!!", 99999);
       firstFight.addAttack(normalAttack);
       firstFight.addAttack(specialAttack);

@@ -28,7 +28,7 @@ public class Attack {
             System.out.println(boss.getName() + " has " + boss.getHp() + "HP remaining!");
          }
       } else { 
-         System.out.println("Oh No! Your attack missed.");
+         System.out.println(". Oh No! Your attack missed.");
          System.out.println(boss.getName() + " has " + boss.getHp() + "HP remaining!");
       }
    }
@@ -51,7 +51,7 @@ public class Attack {
             System.out.println(player.getName() + " has " + player.getHp() + "HP remaining!");
          } 
       } else {
-         System.out.println(" You got lucky! Bosses attack missed.");
+         System.out.println(". You got lucky! The attack missed!");
          System.out.println(player.getName() + " has " + player.getHp() + "HP remaining!");
       }
    }
