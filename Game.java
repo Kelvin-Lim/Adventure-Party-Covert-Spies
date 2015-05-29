@@ -10,8 +10,22 @@ public class Game {
       //System.out.println(theChosenOnesName);
       System.out.println("How old are you?");
       int theChosenOnesAge = console.nextInt();
-      System.out.println("What grade level are you?");
-      int theChosenOnesGrade = console.nextInt();
+      System.out.println("What grade level are you? (9 - 12)");
+      int theChosenOnesGrade = 0;
+      while(theChosenOnesGrade < 9 || theChosenOnesGrade > 12) {
+         theChosenOnesGrade  = console.nextInt();
+         try {
+            if(theChosenOnesGrade < 9 || theChosenOnesGrade > 12) {
+               throw new IllegalArgumentException("Grade must be between 9 and 12.");
+            }
+         }
+         catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage() + " Please choose a new grade.");
+         }
+      }
+      System.out.println();
+      System.out.println("(When options are given, please make your choice using the number next to the choice.)");
+      System.out.println();
       Player theChosenOne = new Player(theChosenOnesName, theChosenOnesAge, theChosenOnesGrade);
      
      
@@ -30,7 +44,7 @@ public class Game {
       */
       //System.out.println("Focus: "+theChosenOne.getFocus());
       
-      Decision subDay = new Decision("You have a sub in class!" , 2);
+      /*Decision subDay = new Decision("You have a sub in class!" , 2);
       int checker = 0;
       subDay.setDecisions("Study.");
       subDay.setDecisions("Play Halo.");
@@ -54,7 +68,7 @@ public class Game {
          theChosenOne.updateFocus(-1);
          theChosenOne.updateCharis(1);
       }
-      
+      */
       // Battle test
       AttackOptions firstFight = new AttackOptions();
       AttackOptions bossFight = new AttackOptions();  
@@ -80,21 +94,26 @@ public class Game {
          firstFight.attacks().get(theChosenAttack - 1).useAttackPlayer(theChosenOne,rapBoss);
          double randomAttack = (Math.random() * 100);
          if(rapBoss.getHp() > 0) {
-            if(randomAttack < 25) {
-               bossFight.attacks().get(0).useAttackBoss(theChosenOne,rapBoss);
-            } 
-            else if(randomAttack >= 25 || randomAttack < 50) {
-               bossFight.attacks().get(1).useAttackBoss(theChosenOne,rapBoss);
-            } 
-            else if(randomAttack >= 50 || randomAttack < 75) {
-               bossFight.attacks().get(2).useAttackBoss(theChosenOne,rapBoss);
-            } 
-            else {
-               bossFight.attacks().get(3).useAttackBoss(theChosenOne,rapBoss);
+            if (deadline != 10) {
+               if(randomAttack < 25) {
+                  bossFight.attacks().get(0).useAttackBoss(theChosenOne,rapBoss);
+               } 
+               else if(randomAttack >= 25 || randomAttack < 50) {
+                  bossFight.attacks().get(1).useAttackBoss(theChosenOne,rapBoss);
+               } 
+               else if(randomAttack >= 50 || randomAttack < 75) {
+                  bossFight.attacks().get(2).useAttackBoss(theChosenOne,rapBoss);
+               } 
+               else {
+                  bossFight.attacks().get(3).useAttackBoss(theChosenOne,rapBoss);
+               }
             }
-            if (deadline >= 7) {
+            if (deadline >= 7 && deadline < 9) {
                System.out.println("Deadline Approaches! " + (10 - deadline) + " Days Remaining!");
-            }
+            } 
+            else if (deadline == 9) {
+               System.out.println("Deadline Approaches! " + (10 - deadline) + " Day Remaining!");
+            } 
             if (deadline >= 10) {
                rapBoss.updateFocus(1000);
                bossFight.addAttack(bossAttack5);
@@ -102,11 +121,12 @@ public class Game {
             }
             deadline++;
          }
-         
+         System.out.println();
       }
       if (theChosenOne.getHp() > 0) {
-         System.out.println("You have defeated the boss! Your grade will be increased");
-      } else {
+         System.out.println("You have defeated the boss! You will be fully healed and gain 10 more HP to your max HP.");
+      } 
+      else {
          System.out.println("You have failed! GAME OVER.");
       }
       deadline = 0;
