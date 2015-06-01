@@ -27,9 +27,77 @@ public class Game {
       System.out.println("(When options are given, please make your choice using the number next to the choice.)");
       System.out.println();
       Player theChosenOne = new Player(theChosenOnesName, theChosenOnesAge, theChosenOnesGrade);
-     
-     
-     
+      System.out.println("Attention all students! Grading policies have changed this year!");
+      System.out.println("Grades are now divided into five parts!");
+      System.out.println("0% will result in your failure. 1 - 25% will be a D.");
+      System.out.println("26 - 50% will be a C. 51 - 75% will be a B. And 76 - 100% will be an A.");
+      System.out.println();
+      
+      //First day of class
+      Decision newStudent = new Decision("Welcome to your first day." , 2);
+      int newStudentChecker = 0;
+      newStudent.setDecisions("Sit with the cool kids in the corner by Ashley.");
+      newStudent.setDecisions("Sit across the room with the studious kids.");
+      newStudent.displayChoices();
+      newStudentChecker = console.nextInt() - 1;
+      if (newStudentChecker == 0) {
+         //stat increase/decrease
+         //Sitting with cool kids
+         System.out.println();
+         theChosenOne.updateIntel(1);
+         theChosenOne.updateCharis(1);
+         theChosenOne.updateFocus(-1);
+         System.out.println("Intelligence has gone up by 1. Charisma has gone up by 1.");
+         System.out.println("Focus has gone down by 1.");
+         System.out.println("Alex Rickert sits in this corner! Would you like to befriend him?");
+         console.next();
+      } 
+      else if (newStudentChecker == 1) {
+         //stat increase/decrease
+         //Sitting with studious kids
+         System.out.println();
+         theChosenOne.updateFocus(2);
+         theChosenOne.updateCharis(-2);
+         System.out.println("Focus has gone up by 2.");
+         System.out.println("Charisma has gone down by 2.");
+         System.out.println("Jetrin Wichienwidhtaya sits here! Would you like to befriend him?");
+         console.next();
+      }
+      
+      //Starting to learn
+      Decision textbook = new Decision("You start learning how to code." , 4);
+      int textbookChecker = 0;
+      textbook.setDecisions("Read the textbook.");
+      textbook.setDecisions("Learn on your own.");
+      textbook.setDecisions("Learn from your friends.");
+      textbook.setDecisions("Ask Ashley to do it all for you.");
+      textbook.displayChoices();
+      textbookChecker = console.nextInt() - 1;
+      if (textbookChecker == 0) {
+         //stat increase/decrease
+         //Reading textbook
+         System.out.println();
+         theChosenOne.updateIntel(1);
+         theChosenOne.updateFocus(1);
+         System.out.println("Intelligence has gone up by 1. Focus has gone up by 1.");
+      } else if (textbookChecker == 1) {
+         //stat increase/decrease
+         //Self learning
+         System.out.println();
+         theChosenOne.updateLuck(2);
+         System.out.println("Luck has gone up by 2.");
+      } else if (textbookChecker == 2) {
+         //Friend learning
+         theChosenOne.updateIntel(1);
+         theChosenOne.updateCharis(1);
+         System.out.println("Intelligence has gone up by 1. Charisma has gone up by 1.");
+      } else {
+         theChosenOne.updateIntel(-1);
+         theChosenOne.updateCharis(-1);
+         theChosenOne.updateFocus(-1);
+         theChosenOne.updateLuck(-1);
+         System.out.println("Ashley laughs at you. All stats decreased by 1.");
+      }
       /*
       Attack useCode = new Attack("useCode",10);
       
@@ -114,7 +182,7 @@ public class Game {
             else if (deadline == 9) {
                System.out.println("Deadline Approaches! " + (10 - deadline) + " Day Remaining!");
             } 
-            if (deadline >= 10) {
+            if (deadline >= 20) {
                rapBoss.updateFocus(1000);
                bossFight.addAttack(bossAttack5);
                bossFight.attacks().get(4).useAttackBoss(theChosenOne,rapBoss);
@@ -130,6 +198,7 @@ public class Game {
          System.out.println("You have failed! GAME OVER.");
       }
       deadline = 0;
+      
       /*
       System.out.println(theChosenOne.getName());
       System.out.println(theChosenOne.getAge());
