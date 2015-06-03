@@ -79,7 +79,7 @@ public class Player {
       maxHp += update;
    }
    
-   public void healHp(int update) {
+   public void healHp() {
       playerStats[0] = maxHp;
    }
 }
