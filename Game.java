@@ -217,12 +217,16 @@ public class Game {
          theChosenOne.setHp(10);
          theChosenOne.healHp();
          System.out.println("You have learned Cheat! You have learned Summon Tom!");
+         Attack Cheat = new Attack("Cheat", 5);
+         normalAttacks.addAttack(Cheat);
+         Attack summonTom = new Attack("Summon Tom", theChosenOne.getCharis());
+         specialAttacks.addAttack(summonTom);
       } 
       else {
          System.out.println("You have failed! GAME OVER.");
       }
       deadline = 0;
-      
+      System.out.println();
       //more events if time
       
       //second boss = space needle
